@@ -291,6 +291,8 @@ RUN cd / && git clone https://github.com/meetecho/janus-gateway.git && cd /janus
     make && make install && make configs && ldconfig
 
 COPY nginx.conf /usr/local/nginx/nginx.conf
+COPY cert.pem /usr/local/nginx/cert.pem
+COPY cert.key /usr/local/nginx/cert.key
 
 CMD nginx && janus
 
